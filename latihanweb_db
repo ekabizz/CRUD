@@ -1,0 +1,100 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 09 Agu 2020 pada 18.07
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `latihanweb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `mahasiswa`
+--
+
+CREATE TABLE `mahasiswa` (
+  `nim` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `fakultas` varchar(50) NOT NULL,
+  `prodi` varchar(50) NOT NULL,
+  `agama` varchar(50) NOT NULL,
+  `nomorhp` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `mahasiswa`
+--
+
+INSERT INTO `mahasiswa` (`nim`, `nama`, `fakultas`, `prodi`, `agama`, `nomorhp`, `alamat`) VALUES
+(12020, 'i wayan mari dumun', 'teknik', 'teknik informatika', 'hindu', '081239123123', 'Jl.Merta Sari gg 4 Denpasar'),
+(22020, 'made keponk', 'teknik', 'otomatif', 'islam', '081237123234', 'Jl. Kepundung no 56 Denpasar'),
+(32020, 'I Ketut Motorola', 'mifa', 'biologi terapan', 'hindu', '085739123123', 'Jl. Mawar nomor 10 Denpasar');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `matakuliah`
+--
+
+CREATE TABLE `matakuliah` (
+  `kode` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `fakultas` varchar(50) NOT NULL,
+  `jam` varchar(50) NOT NULL,
+  `dosen` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `matakuliah`
+--
+
+INSERT INTO `matakuliah` (`kode`, `nama`, `fakultas`, `jam`, `dosen`) VALUES
+(21, 'oop2', 'teknik', '20-00', 'sumerta');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`nim`);
+
+--
+-- Indeks untuk tabel `matakuliah`
+--
+ALTER TABLE `matakuliah`
+  ADD PRIMARY KEY (`kode`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `matakuliah`
+--
+ALTER TABLE `matakuliah`
+  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
